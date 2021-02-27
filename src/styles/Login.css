@@ -1,0 +1,104 @@
+* {
+  text-align: center;
+}
+
+header h1 {
+  background-color: black;
+  color: white;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem;
+}
+
+form .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+form .inputs div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form .inputs div label {
+  margin: 0.2rem;
+}
+
+form .inputs div input {
+  margin: 0.2rem;
+  border: 1px solid black;
+  border-radius: 2px;
+  -webkit-box-shadow: 2px 2px black;
+          box-shadow: 2px 2px black;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-transition-property: -webkit-box-shadow;
+  transition-property: -webkit-box-shadow;
+  transition-property: box-shadow;
+  transition-property: box-shadow, -webkit-box-shadow;
+}
+
+form .inputs div input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+form button {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 2px;
+  -webkit-box-shadow: 2px 2px black;
+          box-shadow: 2px 2px black;
+  margin: 1rem 1rem 0rem 1rem;
+  padding: 0.5rem 0.9rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-transition-property: background-color, color, -webkit-box-shadow;
+  transition-property: background-color, color, -webkit-box-shadow;
+  transition-property: background-color, box-shadow, color;
+  transition-property: background-color, box-shadow, color, -webkit-box-shadow;
+}
+
+form button:hover {
+  background-color: black;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: white;
+}
+
+p {
+  margin: 0.5rem 1rem;
+}
+
+p a {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  margin-top: 2rem;
+}
+/*# sourceMappingURL=Login.css.map */

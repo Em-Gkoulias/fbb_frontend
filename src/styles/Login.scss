@@ -1,0 +1,75 @@
+* {
+  text-align: center;
+}
+
+header h1 {
+  background-color: black;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+
+  .inputs {
+    display: flex;
+    justify-content: center;
+    
+    div {
+      display: flex;
+      flex-direction: column;
+
+        label {
+          margin: 0.2rem;
+        }
+    
+        input {
+          margin: 0.2rem;
+          border: 1px solid black;
+          border-radius: 2px;
+          box-shadow: 2px 2px black;
+          transition: all 0.2s ease;
+          transition-property: box-shadow;
+        }
+
+        input:focus {
+          box-shadow: none;
+        }
+    }
+  }
+
+  button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow: 2px 2px black;
+    margin: 1rem 1rem 0rem 1rem;
+    padding: 0.5rem 0.9rem;
+    transition: all 0.2s ease;
+    transition-property: background-color, box-shadow, color;
+  }
+
+  button:hover {
+    background-color: black;
+    box-shadow: none;
+    color: white;
+  }
+}
+
+p {
+  margin: 0.5rem 1rem;
+
+  a {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  margin-top: 2rem;
+}
