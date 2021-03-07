@@ -1,3 +1,22 @@
 h2 {
   background-color: aqua;
 }
+
+button {
+  align-self: center;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 2px;
+  box-shadow: 2px 2px black;
+  margin: 1rem 1rem 0rem 1rem;
+  padding: 0.5rem 0.9rem;
+  transition: all 0.2s ease;
+  transition-property: background-color, box-shadow, color;
+  width: 20%;
+}
+
+button:hover {
+  background-color: black;
+  box-shadow: none;
+  color: white;
+}
