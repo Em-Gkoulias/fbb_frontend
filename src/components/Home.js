@@ -7,6 +7,7 @@ import "../styles/Home.scss";
 // import duck from "../images/index.png";
 
 const Home = () => {
+  const [user, setUser] = useState({})
   const [memes, setMemes] = useState([]);
 
   useEffect(() => {

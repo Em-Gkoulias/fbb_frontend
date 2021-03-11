@@ -10,11 +10,13 @@ const CreatePost = ({ user }) => {
 
   const clickHandler = (e) => {
     e.preventDefault();
+    console.log(user.id)
+
     const data = new FormData();
 
     data.append("title", title);
     data.append("file", file);
-    data.append("user", user.username);
+    data.append("user_id", user.id);
     
     console.log(data);
     // axios.defaults.withCredentials = true;
