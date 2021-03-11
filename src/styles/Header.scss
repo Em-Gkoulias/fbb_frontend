@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  img {
+    background-color: white;
+    transition: 0.2s ease background-color;
+  }
+
+  img:hover {
+    background-color: aqua;
+  }
+}

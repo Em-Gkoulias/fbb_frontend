@@ -4,8 +4,13 @@ import axios from "axios";
 
 import Header from './Header';
 import Footer from './Footer';
+import Home from './Home';
+import CreatePost from './CreatePost';
 
 import '../styles/Main.scss';
+import femaleAvatar from '../svg/female_avatar.svg';
+import maleAvatar from '../svg/male_avatar.svg';
+import astronaut from '../svg/astronaut.svg';
 
 const Main = () => {
   let [user, setUser] = useState({})
@@ -31,23 +36,23 @@ const Main = () => {
       .post("http://localhost:3001/logout")
       .then((res) => {
         console.log(res);
+        window.location.href = "http://localhost:3000/login";
       })
       .catch((err) => console.log(err));
   }
 
   return (
     <>
+      <Header />
       <Switch>
-        <Route>
-          <Header />
-          <h2>WELCOME TO THE MAIN PAGE</h2>
-
-          <h4>Welcome back {user.username}</h4>
-          <Link to="/register">register</Link>
-          <button onClick={clickHandler}>log out</button>
-          <Footer />
+        <Route path="/posts/create">
+          <CreatePost user={user} />
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
+      <Footer />
     </>
   );
 };

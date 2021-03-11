@@ -30,7 +30,10 @@ const Login = () => {
       username: username,
       password: password,
     })
-    .then((res) => console.log(res))
+    .then((res) => {
+      console.log(res);
+      window.location.href = "http://localhost:3000/";
+    })
     .catch((err) => console.log(err));
   }
 
