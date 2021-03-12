@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import axios from "axios";
 
@@ -10,13 +10,13 @@ const CreatePost = ({ user }) => {
 
   const clickHandler = (e) => {
     e.preventDefault();
-    console.log(user.id)
 
     const data = new FormData();
 
     data.append("title", title);
     data.append("file", file);
     data.append("user_id", user.id);
+    data.append("username", user.username);
     
     console.log(data);
     // axios.defaults.withCredentials = true;
@@ -24,7 +24,7 @@ const CreatePost = ({ user }) => {
       .post("http://localhost:3001/posts", data)
       .then((res) => {
         console.log(res);
-        // window.location.href = "http://localhost:3000/";
+        window.location.href = "http://localhost:3000/";
       })
       .catch((err) => console.log(err));
   };

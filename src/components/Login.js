@@ -46,7 +46,7 @@ const Login = () => {
       <form action="">
         <div className="inputs">
           {console.log(user)}
-          <h1>user: {user.username}</h1>
+          {/* <h1>user: {user.username}</h1> */}
           <div>
             <label htmlFor="">username</label>
             <label htmlFor="">password</label>
@@ -74,7 +74,7 @@ const Login = () => {
         if you don't have an account already, you can{" "}
         <Link to="/register">register here</Link>
       </p>
-      <Link to="/">main</Link>
+      {/* <Link to="/">main</Link> */}
       <footer>cause peace was never an option</footer>
     </>
   );

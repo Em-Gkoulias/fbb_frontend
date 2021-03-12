@@ -6,11 +6,9 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
 import CreatePost from './CreatePost';
+import ShowPost from './ShowPost';
 
 import '../styles/Main.scss';
-import femaleAvatar from '../svg/female_avatar.svg';
-import maleAvatar from '../svg/male_avatar.svg';
-import astronaut from '../svg/astronaut.svg';
 
 const Main = () => {
   let [user, setUser] = useState({})
@@ -45,6 +43,9 @@ const Main = () => {
     <>
       <Header />
       <Switch>
+        <Route path="/posts/:id">
+          <ShowPost />
+        </Route>
         <Route path="/posts/create">
           <CreatePost user={user} />
         </Route>
