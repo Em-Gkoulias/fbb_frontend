@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.header {
+.header div {
   background-color: black;
   display: flex;
   justify-content: space-between;
@@ -11,6 +11,15 @@
   top: 0;
   width: 100%;
 
+  .logo {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: none;
+    height: 50px;
+  }
+
   img {
     background-color: white;
     transition: 0.2s ease background-color;
@@ -18,5 +27,46 @@
 
   img:hover {
     background-color: aqua;
+    cursor: pointer;
   }
+
 }
+
+.dropdownHidden {
+  display: none;
+}
+
+.profile {
+  background-color: black;
+  border-radius: 0;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  position: fixed;
+  right: 0;
+  top: 50px;
+  width: 120px;
+}
+
+.profile:hover {
+  color: aqua;
+}
+
+.logout {
+  background-color: black;
+  border-radius: 0;
+  color: white;
+  font-size: 1rem;
+  box-shadow: none;
+  position: fixed;
+  right: 0;
+  top: 90px;
+  width: 120px;
+
+  margin: 0;
+}
+
+.logout:hover {
+  color: aqua;
+}
+

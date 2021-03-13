@@ -1,61 +1,55 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import axios from "axios";
 
-import Header from './Header';
-import Footer from './Footer';
-import Home from './Home';
-import CreatePost from './CreatePost';
-import ShowPost from './ShowPost';
+import Header from "./Header";
+import Footer from "./Footer";
+import Home from "./Home";
+import CreatePost from "./CreatePost";
+import ShowPost from "./ShowPost";
 
-import '../styles/Main.scss';
+import "../styles/Main.scss";
 
 const Main = () => {
-  let [user, setUser] = useState({})
+  const [user, setUser] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios.defaults.withCredentials = true;
     axios
       .get("http://localhost:3001/user")
       .then((res) => {
-        console.log(res.data)
-        if (res.data === '') {
+        console.log(res.data);
+        if (res.data === "") {
           window.location.href = "http://localhost:3000/login";
         }
         setUser(res.data);
+        setIsLoading(false);
       })
       .catch((err) => console.log(err));
-  }, [])
+  }, []);
 
-  const clickHandler = (e) => {
-    e.preventDefault();
-    axios.defaults.withCredentials = true;
-    axios
-      .post("http://localhost:3001/logout")
-      .then((res) => {
-        console.log(res);
-        window.location.href = "http://localhost:3000/login";
-      })
-      .catch((err) => console.log(err));
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  } else {
+    return (
+      <div className="main">
+        <Header />
+        <Switch>
+          <Route path="/posts/create" exact>
+            <CreatePost user={user} />
+          </Route>
+          <Route path="/posts/:id" exact>
+            <ShowPost />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    );
   }
-
-  return (
-    <>
-      <Header />
-      <Switch>
-        <Route path="/posts/:id">
-          <ShowPost />
-        </Route>
-        <Route path="/posts/create">
-          <CreatePost user={user} />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-      <Footer />
-    </>
-  );
 };
 
 export default Main;
