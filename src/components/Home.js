@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { Swirch, Route, Link } from "react-router-dom";
 
 import "../styles/Home.scss";
-
-// import duck from "../images/index.png";
+import upArrow from "../svg/up-arrow.svg";
+import downArrow from '../svg/down-arrow.svg';
+import comment from "../svg/comment.svg";
 
 const Home = () => {
-  // const [user, setUser] = useState({})
   const [memes, setMemes] = useState([]);
 
   useEffect(() => {
@@ -28,17 +28,22 @@ const Home = () => {
         {memes.map((meme) => {
           return (
             <div className="post">
-              <div>
-                <h4 className="postsTitle">{meme.title}</h4>
-                <Link to={`/posts/${meme._id}`}>
-                  <img
-                    src={`http://localhost:3001/static/${meme.meme}`}
-                    alt="image"
-                    style={{ minHeight: "300px", width: "300px" }}
-                  />
-                </Link>
+              <p>category - 8h</p>
+              <h4 className="postsTitle">{meme.title}</h4>
+              <Link to={`/posts/${meme._id}`}>
+                <img
+                  className="meme"
+                  src={`http://localhost:3001/static/${meme.meme}`}
+                  alt="image"
+                />
+              </Link>
+              <p>6,250 points - 262 comments</p>
+              <div className="icons">
+                <img className="icon like" src={upArrow} alt="" />
+                <img className="icon dislike" src={downArrow} alt="" />
+                <img className="icon" src={comment} alt="" />
               </div>
-              <div className="postsUser">{meme.username}</div>
+              {/* <div className="postsUser">{meme.username}</div> */}
             </div>
           );
         })}

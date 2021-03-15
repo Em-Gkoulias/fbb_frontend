@@ -40,13 +40,13 @@ const Main = () => {
             <CreatePost user={user} />
           </Route>
           <Route path="/posts/:id" exact>
-            <ShowPost />
+            <ShowPost user={user} />
           </Route>
           <Route path="/">
             <Home />
           </Route>
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }

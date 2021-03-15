@@ -1,3 +1,73 @@
 .showPost {
-  margin-top: 3rem;
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 2rem;
+
+  p {
+    margin: 1rem 0;
+  }
+
+  .meme {
+    min-height: 300px;
+    width: 100%;
+  }
+
+  .icons {
+    display: flex;
+    margin-bottom: 2rem;
+
+    .icon {
+      border: 1px solid black;
+      height: 30px;
+      padding: 5px;
+      margin-right: 1rem;
+      transition: background-color ease-in-out 0.2s;
+    }
+
+    .icon:hover {
+      background-color: aqua;
+      cursor: pointer;
+    }
+
+    .like:hover {
+      background-color: rgb(29, 240, 29);
+    }
+
+    .dislike:hover {
+      background-color: red;
+    }
+  }
+
+  h5 {
+    margin-top: 1rem;
+  }
+
+  .commentForm {
+    margin: 0;
+    width: 100%;
+
+    textarea {
+      border: 1px solid black;
+      text-align: start;
+      padding: 1rem;
+      width: 100%;
+    }
+  }
+
+  ul {
+    margin-top: 1rem;
+  }
+
+  .comment {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .comment:hover {
+    background-color: rgb(230, 224, 224);
+  }
 }

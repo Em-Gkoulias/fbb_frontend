@@ -42,8 +42,8 @@ const CreatePost = ({ user }) => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="title">meme: </label>
+        <div className="browseInput">
+          <label htmlFor="file">meme: </label>
           <input
             type="file"
             name="file"

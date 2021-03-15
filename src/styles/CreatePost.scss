@@ -2,10 +2,24 @@
   box-sizing: border-box;
 }
 
-// .createPost {
-  // margin: 5rem;
+.createPost {
+  // background-color: red;
+  margin: auto;
+  max-width: 500px;
+  // overflow: auto;
 
-  // form {
-  //   // background-color: aqua;
-  // }
-// }
+  input {
+    text-align: start;
+  }
+
+  .browseInput {
+    // display: flex;
+    max-width: 100%;
+    overflow: auto;
+    // margin: 0 2rem;
+    
+    // text-overflow: ellipsis;
+    // background-color: green;
+    // display: flex;
+  }
+}

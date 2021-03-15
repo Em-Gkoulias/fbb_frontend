@@ -40,16 +40,14 @@ const Header = () => {
         <button className="logo" type="submit" onClick={toggleHidden}>
           <img src={astronaut} alt="user icon" style={{ height: "100%" }} />
         </button>
-        {hidden == false ? (
-          <div className="dropdown">
-            <Link className="profile" >
-              profile
-            </Link>
-            <button className="logout" onClick={clickLogout}>
-              logout
-            </button>
-          </div>
-        ) : null }
+        <div className={ hidden ? 'unvisible' : 'visible' }>
+          <Link className="profile" >
+            profile
+          </Link>
+          <button className="logout" onClick={clickLogout}>
+            logout
+          </button>
+        </div>
       </div>
     </div>
   );
