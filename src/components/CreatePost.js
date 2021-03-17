@@ -16,7 +16,8 @@ const CreatePost = ({ user }) => {
     data.append("title", title);
     data.append("file", file);
     data.append("user_id", user.id);
-    data.append("username", user.username);
+    // data.append("user_id", user.id);
+    // data.append("username", user.username);
     
     console.log(data);
     // axios.defaults.withCredentials = true;

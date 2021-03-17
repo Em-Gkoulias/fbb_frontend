@@ -20,10 +20,9 @@ const ShowPost = ({ user }) => {
     axios.defaults.withCredentials = true;
     axios
       .post("http://localhost:3001/comments", {
-        user_id: user.id,
-        post_id: post_id,
         body,
-        username: user.username,
+        user_id: user.id,
+        post_id,
       })
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
@@ -63,7 +62,7 @@ const ShowPost = ({ user }) => {
         <img className="icon dislike" src={downArrow} alt="" />
         <img className="icon" src={comment} alt="" />
       </div>
-      <h4>1037 comments</h4>
+      <h4>{comments.length} comments</h4>
       <h5>add a comment</h5>
       <form className="commentForm" action="">
         <textarea
