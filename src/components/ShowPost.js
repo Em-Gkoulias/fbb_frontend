@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import Comment from './Comment';
+
 import "../styles/ShowPost.scss";
 import upArrow from "../svg/up-arrow.svg";
 import downArrow from "../svg/down-arrow.svg";
@@ -24,7 +26,10 @@ const ShowPost = ({ user }) => {
         user_id: user.id,
         post_id,
       })
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        console.log(res.data);
+        window.location.reload();
+      })
       .catch((err) => console.log(err));
   };
 
@@ -32,16 +37,9 @@ const ShowPost = ({ user }) => {
     axios
       .get(`http://localhost:3001/posts/${post_id}`)
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data.comments);
         setPost(res.data);
-      })
-      .catch((err) => console.log(err));
-
-    axios
-      .get(`http://localhost:3001/comments/${post_id}`)
-      .then((res) => {
-        console.log(res.data);
-        setComments(res.data);
+        setComments(res.data.comments);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -79,9 +77,8 @@ const ShowPost = ({ user }) => {
       <ul>
         {comments.map((comment) => {
           return (
-            <li className="comment">
-              <h5>{comment.username}</h5>
-              <p>{comment.body}</p>
+            <li className="commentItem">
+              <Comment text={comment.body} userId={comment.user} />
             </li>
           );
         })}
