@@ -27,19 +27,20 @@ const Register = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     axios.defaults.withCredentials = true;
-    axios.post("http://localhost:3001/users", {
-      username: username,
-      email: email,
-      password: password
-    })
-    .then(res => {
-      console.log(res)
-      window.location.href = "http://localhost:3000/login";
-    })
-    .catch(err => {
-      console.log(err)
-      window.location.href = "http://localhost:3000/register";
-    })
+    axios
+      .post("http://localhost:3001/users", {
+        username: username,
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        console.log(res);
+        window.location.href = "http://localhost:3000/login";
+      })
+      .catch((err) => {
+        console.log(err);
+        // window.location.href = "http://localhost:3000/register";
+      });
   };
 
   return (
@@ -47,7 +48,7 @@ const Register = () => {
       <header>
         <h1>fbb</h1>
       </header>
-      <form>
+      <form onSubmit={submitHandler}>
         <div className="inputs">
           <div>
             <label htmlFor="">username</label>
@@ -62,25 +63,33 @@ const Register = () => {
               id="username"
               onChange={(e) => setUsername(e.target.value)}
               value={username}
+              required
             />
             <input
-              type="text"
+              type="email"
               name="email"
               id="email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
+              required
             />
             <input
-              type="text"
+              type="password"
               name="password"
               id="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
+              required
             />
-            <input type="text" name="confirmPassword" id="confirmPassword" />
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              required
+            />
           </div>
         </div>
-        <button type="submit" onClick={submitHandler}>
+        <button type="submit">
           sign in
         </button>
       </form>

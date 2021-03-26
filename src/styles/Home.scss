@@ -44,12 +44,13 @@ ul {
       cursor: pointer;
     }
 
-    .like:hover {
-      background-color: rgb(29, 240, 29);
-    }
-
-    .dislike:hover {
-      background-color: red;
+    .voted {
+      background-color: aqua;
+      border: 1px solid black;
+      height: 30px;
+      padding: 5px;
+      margin-right: 1rem;
+      transition: background-color ease-in-out 0.2s;
     }
   }
 }

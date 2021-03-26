@@ -43,10 +43,9 @@ const Main = () => {
             <ShowPost user={user} />
           </Route>
           <Route path="/">
-            <Home />
+            <Home userId={user.id} />
           </Route>
         </Switch>
-        {/* <Footer /> */}
       </div>
     );
   }

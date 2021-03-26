@@ -52,7 +52,6 @@ const Login = () => {
         <form action="">
           <div className="inputs">
             {console.log(user)}
-            {/* <h1>user: {user.username}</h1> */}
             <div>
               <label htmlFor="">username</label>
               <label htmlFor="">password</label>
@@ -65,7 +64,7 @@ const Login = () => {
                 onChange={(e) => setUsername(e.target.value)}
               />
               <input
-                type="text"
+                type="password"
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

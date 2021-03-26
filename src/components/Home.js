@@ -3,14 +3,13 @@ import { useEffect, useState } from "react";
 import { Swirch, Route, Link } from "react-router-dom";
 
 import "../styles/Home.scss";
-import upArrow from "../svg/up-arrow.svg";
-import downArrow from '../svg/down-arrow.svg';
-import comment from "../svg/comment.svg";
+import Details from "./Details";
 
-const Home = () => {
+const Home = ({userId}) => {
   const [memes, setMemes] = useState([]);
 
   useEffect(() => {
+    // axios.defaults.withCredentials;
     axios
       .get("http://localhost:3001/posts")
       .then((res) => {
@@ -37,13 +36,7 @@ const Home = () => {
                   alt="image"
                 />
               </Link>
-              <p>6,250 points - 262 comments</p>
-              <div className="icons">
-                <img className="icon like" src={upArrow} alt="" />
-                <img className="icon dislike" src={downArrow} alt="" />
-                <img className="icon" src={comment} alt="" />
-              </div>
-              {/* <div className="postsUser">{meme.username}</div> */}
+              <Details postId={meme._id} userId={userId} postVotes={meme.votes} />
             </div>
           );
         })}
