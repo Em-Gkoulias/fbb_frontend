@@ -6,7 +6,7 @@ import "../styles/Home.scss";
 import Details from "./Details";
 
 const Home = ({userId}) => {
-  const [memes, setMemes] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     // axios.defaults.withCredentials;
@@ -14,7 +14,7 @@ const Home = ({userId}) => {
       .get("http://localhost:3001/posts")
       .then((res) => {
         console.log(res.data);
-        setMemes(res.data);
+        setPosts(res.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -24,19 +24,19 @@ const Home = ({userId}) => {
     <div className="home">
       <Link to="posts/create">create post</Link>
       <ul>
-        {memes.map((meme) => {
+        {posts.map((post) => {
           return (
             <div className="post">
               <p>category - 8h</p>
-              <h4 className="postsTitle">{meme.title}</h4>
-              <Link to={`/posts/${meme._id}`}>
+              <h4 className="postsTitle">{post.title}</h4>
+              <Link to={`/posts/${post._id}`}>
                 <img
                   className="meme"
-                  src={`http://localhost:3001/static/${meme.meme}`}
+                  src={`http://localhost:3001/static/${post.meme}`}
                   alt="image"
                 />
               </Link>
-              <Details postId={meme._id} userId={userId} postVotes={meme.votes} />
+              <Details postId={post._id} userId={userId} postVotes={post.votes} />
             </div>
           );
         })}
